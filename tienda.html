@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Rick & Morty</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="img/logo_rick_and_morty.png.jpg" alt="Rick & Morty Universe Logo">
+            </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="main.html">Explorar</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tienda-page">
+        <section class="tienda-banner">
+        <h2>¡Llévate un pedacito del Multiverso!</h2>
+        <p>Explora nuestra selección de productos únicos inspirados en Rick y Morty.</p>
+    </section>
+
+    <section class="favoritos-tienda">
+        <h2>Productos Favoritos</h2>
+        <div class="favoritos-tienda-lista">
+            </div>
+        <p class="sin-favoritos-tienda" style="display: none;">Aún no tienes productos favoritos.</p>
+    </section>
+
+    <section class="productos-grid">
+        <div class="producto-card">
+            <img src="img/tienda/portal_gun.jpg" alt="Portal Gun Réplica">
+            <div class="favorito-icon" data-producto-nombre="Portal Gun Réplica">★</div>
+            <h3>Portal Gun Réplica</h3>
+            <p class="precio">$49.99</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/plumbus.jpg" alt="Plumbus">
+            <div class="favorito-icon" data-producto-nombre="Plumbus">★</div>
+            <h3>Plumbus</h3>
+            <p class="precio">$12.50</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/mega_seeds.jpg" alt="Mega Seeds">
+            <div class="favorito-icon" data-producto-nombre="Mega Seeds">★</div>
+            <h3>Mega Seeds</h3>
+            <p class="precio">$25.00</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/butter_robot.jpg" alt="Butter Robot">
+            <div class="favorito-icon" data-producto-nombre="Butter Robot">★</div>
+            <h3>Butter Robot</h3>
+            <p class="precio">$35.00</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/szechuan_sauce.jpg" alt="Szechuan Sauce">
+            <div class="favorito-icon" data-producto-nombre="Szechuan Sauce">★</div>
+            <h3>Szechuan Sauce</h3>
+            <p class="precio">$9.99</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/meeseeks_box.jpg" alt="Meeseeks Box">
+            <div class="favorito-icon" data-producto-nombre="Meeseeks Box">★</div>
+            <h3>Meeseeks Box</h3>
+            <p class="precio">$59.99</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+
+        <div class="producto-card">
+            <img src="img/tienda/rick_potion.jpg" alt="Rick's Potion">
+            <div class="favorito-icon" data-producto-nombre="Rick's Potion">★</div>
+            <h3>Rick's Potion</h3>
+            <p class="precio">$19.99</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/microverse_battery.jpg" alt="Microverse Battery">
+            <div class="favorito-icon" data-producto-nombre="Microverse Battery">★</div>
+            <h3>Microverse Battery</h3>
+            <p class="precio">$89.50</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/annihilation_arm.jpg" alt="Annihilation Arm">
+            <div class="favorito-icon" data-producto-nombre="Annihilation Arm">★</div>
+            <h3>Annihilation Arm</h3>
+            <p class="precio">$120.00</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/portal_fluid.jpg" alt="Portal Fluid">
+            <div class="favorito-icon" data-producto-nombre="Portal Fluid">★</div>
+            <h3>Portal Fluid</h3>
+            <p class="precio">$45.00</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/gromflomite_gun.jpg" alt="Gromflomite Gun">
+            <div class="favorito-icon" data-producto-nombre="Gromflomite Gun">★</div>
+            <h3>Gromflomite Gun</h3>
+            <p class="precio">$72.75</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/mind_blower.jpg" alt="Mind Blower">
+            <div class="favorito-icon" data-producto-nombre="Mind Blower">★</div>
+            <h3>Mind Blower</h3>
+            <p class="precio">$68.00</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/mr_poopybutthole_box.jpg" alt="Mr. Poopybutthole Box">
+            <div class="favorito-icon" data-producto-nombre="Mr. Poopybutthole Box">★</div>
+            <h3>Mr. Poopybutthole Box</h3>
+            <p class="precio">$29.99</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/cubes.jpg" alt="Cubes">
+            <div class="favorito-icon" data-producto-nombre="Cubes">★</div>
+            <h3>Cubes</h3>
+            <p class="precio">$16.50</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+        <div class="producto-card">
+            <img src="img/tienda/eyehole.jpg" alt="Eyehole">
+            <div class="favorito-icon" data-producto-nombre="Eyehole">★</div>
+            <h3>Eyehole</h3>
+            <p class="precio">$5.00</p>
+            <button class="add-to-cart-button">Añadir al Carrito</button>
+        </div>
+    </section>
+</main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Rick & Morty Universe. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    </body>
+
+</html>

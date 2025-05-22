@@ -1,0 +1,679 @@
+@font-face {
+    font-family: 'Get Schwifty';
+    src: url('fonts/get_schwifty.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ========================================
+    Estilos Generales
+    ========================================  */
+
+:root {
+    --color-principal: #1bda1b;         
+    --color-secundario: #f0f0f0;      
+    --color-fondo: #111;            
+    --color-texto: #eee;           
+    --color-texto-secundario: #aaa;      
+    --color-accent: #6c5ce7;         
+    --color-card-fondo: #222;      
+    --color-boton: #1c9f1c;       
+    --color-boton-texto: #111;      
+    --header-height: 80px;
+    --footer-height: 60px;
+    --section-padding: 60px 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: url('img/BackGrownd.jpg.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ========================================
+    Header
+    ========================================  */
+
+.main-header {
+    background-color: var(--color-card-fondo);
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo  */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav li a:hover {
+    background-color: #333;
+}
+
+/* ========================================
+    Main (Landing Page)
+    ========================================  */
+
+main {
+    padding-top: var(--header-height); /* Compensa la altura del header fijo  */
+    overflow: hidden;
+}
+
+section {
+    padding: var(--section-padding);
+}
+
+/* ========================================
+    Hero Section
+    ========================================  */
+
+.hero {
+    background: linear-gradient(to right, #1a1a1a, #111);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('img/BackGrownd.jpg.gif');  /* Imagen aquí  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--color-principal);
+    margin-bottom: 1rem;
+    font-family: 'Get Schwifty', sans-serif;
+    text-shadow: 4px 4px 8px rgb(24, 130, 40);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.register-button {
+    background-color: var(--color-principal);
+    color: var(--color-fondo);
+}
+
+.login-button {
+    background-color: transparent;
+    border: 2px solid var(--color-principal);
+    color: var(--color-principal);
+}
+
+.register-button:hover,
+.login-button:hover {
+    opacity: 0.8;
+}
+
+/* ========================================
+    Carrusel
+    ========================================  */
+
+.destacados {
+    text-align: center;
+    background-color: var(--color-card-fondo);
+}
+
+.destacados h2 {
+    color: var(--color-principal);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.carrusel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 80%;
+    margin: 0 auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.carrusel-item {
+    flex: 0 0 auto;
+    width: 300px;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #333;
+    padding: 1rem;
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.carrusel-item p {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.carrusel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carrusel-prev,
+.carrusel-next {
+    background-color: #444;
+    color: var(--color-texto);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.carrusel-prev:hover,
+.carrusel-next:hover {
+    background-color: #555;
+}
+
+/* ========================================
+    Explorar y Tienda
+    ========================================  */
+
+.explorar,
+.tienda-seccion {
+    text-align: center;
+    background-color: var(--color-fondo);
+}
+
+.explorar h2,
+.tienda-seccion h2 {
+    color: var(--color-principal);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.explorar p,
+.tienda-seccion p {
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.explore-button,
+.shop-button {
+    background-color: var(--color-accent);
+    color: var(--color-texto);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover,
+.shop-button:hover {
+    background-color: #5a4ac7;
+}
+
+/* ========================================
+    Contacto
+    ========================================  */
+
+.contacto {
+    background-color: var(--color-card-fondo);
+    text-align: center;
+}
+
+.contacto h2 {
+    color: var(--color-principal);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contacto p {
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contacto-info {
+    font-size: 1.1rem;
+    color: var(--color-texto);
+}
+
+/* ========================================
+    Footer
+    ========================================  */
+
+.main-footer {
+    background-color: var(--color-card-fondo);
+    color: var(--color-texto-secundario);
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--footer-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+    ESTILOS MAIN.HTML
+    ========================================= */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-card-fondo);
+}
+
+.main-header .logo img {
+    height: 50px;
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-header nav li {
+    margin-right: 1rem;
+}
+
+.main-header nav li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-header nav li a:hover {
+    color: var(--color-principal);
+}
+
+.main-header .user-profile-simulado {
+    display: flex;
+    align-items: center;
+}
+
+.main-header .user-profile-simulado img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.main-header .user-profile-simulado span {
+    color: var(--color-secundario);
+    margin-right: 1rem;
+}
+
+.main-header .profile-actions button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.main-header .profile-actions button:hover {
+    background-color: darken(var(--color-accent), 10%);
+}
+
+.main-content {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.main-content .search-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.main-content .search-bar input {
+    width: 70%;
+    padding: 0.75rem;
+    background-color: #333;
+    color: var(--color-texto);
+    border: none;
+    border-radius: 5px;
+}
+
+.main-content .search-bar button {
+    width: 25%;
+    background-color: var(--color-principal);
+    color: var(--color-boton-texto);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main-content .search-bar button:hover {
+    background-color: darken(var(--color-principal), 10%);
+}
+
+.main-content .personajes-lista {
+    margin-top: 2rem;
+}
+
+.main-content .personajes-lista h2,
+.main-content .favoritos-seccion h2 {
+    color: var(--color-principal);
+    margin-bottom: 1rem;
+}
+
+.main-content .personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.main-content .personaje-card {
+    background-color: var(--color-card-fondo);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 2px 2px 5px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Para posicionar el icono de favorito */
+}
+
+.main-content .personaje-card img,
+.tienda-page .producto-card img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    object-fit: cover;
+}
+
+.main-content .personaje-card h3,
+.tienda-page .producto-card h3 {
+    color: var(--color-texto);
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+}
+
+.main-content .personaje-card p,
+.tienda-page .producto-card p {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Icono de Favorito (Estrella) */
+.main-content .fav-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.main-content .fav-icon.active {
+    color: gold; /* Color cuando está activo/favorito */
+}
+
+.main-content .fav-button,
+.main-content .remove-fav-button,
+.tienda-page .add-to-cart-button {
+    background-color: #555;
+    color: var(--color-texto);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    display: none; /* Ocultar los botones */
+}
+
+.main-content .fav-button:hover,
+.tienda-page .add-to-cart-button:hover {
+    background-color: #666;
+}
+
+.main-content .remove-fav-button {
+    background-color: #ff4d4d;
+}
+
+.main-content .remove-fav-button:hover {
+    background-color: #e64545;
+}
+
+.main-content .favoritos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.main-content .sin-favoritos {
+    font-style: italic;
+    color: var(--color-texto-secundario);
+}
+
+/* ========================================
+    Estilos de la Tienda
+    ========================================  */
+
+.tienda-page {
+    padding: 2rem;
+}
+
+.tienda-banner {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo semi-transparente para el banner  */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tienda-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Get Schwifty', cursive;
+    color: #5eff00;
+    text-shadow: 4px 4px 8px rgba(30, 166, 33, 0.5);
+}
+
+.tienda-banner p {
+    font-size: 1.1rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Cuadrícula flexible  */
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.producto-card {
+    background-color: var(--color-card-fondo);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+}
+
+.producto-card:hover {
+    transform: scale(1.03);
+    /* Ligeramente más grande al pasar el ratón  */
+}
+
+.producto-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+}
+
+.producto-card p.precio {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-button {
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: darken(var(--color-boton), 10%);
+    /* Oscurecer el botón al pasar el ratón  */
+}
+
+/* Estilos de la sección de Favoritos  */
+.favoritos-tienda {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--color-card-fondo);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.favoritos-tienda h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.favoritos-tienda-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.favorito-tienda-item {
+    background-color: #444;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.favorito-tienda-item span {
+    margin-right: 0.5rem;
+}
+
+.favorito-tienda-item button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.sin-favoritos-tienda {
+    font-style: italic;
+    color: var(--color-texto-secundario);
+}
+
+/* Estilos del icono de favorito  */
+.favorito-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.favorito-icon.active {
+    color: gold;
+}
