@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rick & Morty Universe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="img/logo_rick_and_morty.png.jpg" alt="Rick & Morty Universe Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="main.html">Explorar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-page">
+        <section class="login-container">
+            <div class="login-image">
+                <img src="img/login.png.jpg" alt="Rick y Morty Iniciando Sesión">
+            </div>
+
+            <div class="login-form-container">
+                <h2 class="login-title">¡Bienvenido de Nuevo, Viajero Interdimensional!</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="user-email"><i class="fas fa-user"></i> Usuario o Email:</label>
+                        <input type="text" id="user-email" name="user-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password"><i class="fas fa-key"></i> Contraseña:</label>
+                        <input type="password" id="login-password" name="login-password" required>
+                    </div>
+                    <button type="submit" class="submit-button">Iniciar Sesión</button>
+                </form>
+                <div class="login-links">
+                    <p>¿No tienes una cuenta? <a href="registro.html">¡Crea una!</a></p>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Rick & Morty Universe (Simulado para Entrega Académica)</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -677,3 +677,240 @@ section {
 .favorito-icon.active {
     color: gold;
 }
+
+/* =========================================
+    ESTILOS LOGIN.HTML
+    ========================================= */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.login-container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background-color: var(--color-card-fondo);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.login-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+}
+
+.login-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.login-form-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-title {
+    font-family: 'Get Schwifty', sans-serif;
+    font-size: 2rem;
+    color: var(--color-principal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    color: var(--color-texto-secundario);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: var(--color-texto);
+}
+
+.submit-button {
+    background-color: var(--color-principal);
+    color: var(--color-boton-texto);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: darken(var(--color-principal), 10%);
+}
+
+.login-links {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.login-links a {
+    color: var(--color-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Estilos para el footer */
+.main-footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 1rem 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+/* =========================================
+    ESTILOS REGISTRO.HTML
+    ========================================= */
+
+.registro-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.registro-container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background-color: var(--color-card-fondo);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.registro-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+}
+
+.registro-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.registro-form-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registro-title {
+    font-family: 'Get Schwifty', sans-serif;
+    font-size: 2rem;
+    color: var(--color-principal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.registro-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    color: var(--color-texto-secundario);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: var(--color-texto);
+}
+
+.submit-button {
+    background-color: var(--color-principal);
+    color: var(--color-boton-texto);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: darken(var(--color-principal), 10%);
+}
+
+.registro-links {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.registro-links a {
+    color: var(--color-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.registro-links a:hover {
+    color: var(--color-accent);
+}
