@@ -27,7 +27,7 @@
         </nav>
         <div class="user-profile-simulado">
             <img src="img/rick.png" alt="Perfil de Usuario (Simulado)">
-            <span>Rick Sanchez</span>
+            <span id="nombre-usuario"></span>
             <div class="profile-actions">
                 <button>Editar Perfil</button>
                 <button>Cerrar Sesión</button>
@@ -44,133 +44,168 @@
         <section class="personajes-lista">
             <h2>Personajes</h2>
             <div class="personajes-grid">
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="rick">
                     <img src="psnjs/rick.png.jpg" alt="Rick Sanchez">
                     <h3>Rick Sanchez</h3>
                     <p>Científico loco.</p>
                     <i class="fav-icon fa-star" data-id="1"></i>
                 </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="morty">
                     <img src="psnjs/morty.png.jpg" alt="Morty Smith">
                     <h3>Morty Smith</h3>
                     <p>Nieto bienintencionado.</p>
                     <i class="fav-icon fa-star" data-id="2"></i>
                 </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="beth">
                     <img src="psnjs/personaje3.png.jpg" alt="Beth Smith">
                     <h3>Beth Smith</h3>
-                    <p>Cirujana de caballos.</p>
+                    <p>Veterinaria de caballos.</p>
                     <i class="fav-icon fa-star" data-id="3"></i>
                 </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="jerry">
                     <img src="psnjs/personaje4.png.jpg" alt="Jerry Smith">
                     <h3>Jerry Smith</h3>
                     <p>Yerno inseguro.</p>
                     <i class="fav-icon fa-star" data-id="4"></i>
                 </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="summer">
                     <img src="psnjs/personaje5.png.jpg" alt="Summer Smith">
                     <h3>Summer Smith</h3>
                     <p>Hermana mayor.</p>
                     <i class="fav-icon fa-star" data-id="5"></i>
                 </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="mr_meeseeks">
+                    <img src="psnjs/mr_meeseeks.png.jpg" alt="Mr. Meeseeks">
+                    <h3>Mr. Meeseeks</h3>
+                    <p>Seres creados para un propósito.</p>
+                    <i class="fav-icon fa-star" data-id="6"></i>
+                </div>
+                <div class="personaje-card" data-personaje="Noob-Noob">
+                    <img src="psnjs/noob_noob.png.jpg" alt="Noob-Noob">
+                    <h3>Mr. Poopybutthole</h3>
+                    <p>¿Parásito o amigo?</p>
+                    <i class="fav-icon fa-star" data-id="7"></i>
+                </div>
+                <div class="personaje-card" data-personaje="pickle_rick">
                     <img src="psnjs/pickle_rick.png.jpg" alt="Pickle Rick">
                     <h3>Pickle Rick</h3>
                     <p>Rick convertido en pepinillo.</p>
-                    <i class="fav-icon fa-star" data-id="6"></i>
+                    <i class="fav-icon fa-star" data-id="8"></i>
                 </div>
-                <div class="personaje-card">
-                    <img src="psnjs/mr_meeseeks.png.jpg" alt="Mr. Meeseeks">
-                    <h3>Mr. Meeseeks</h3>
-                    <p>Seres de un solo propósito.</p>
-                    <i class="fav-icon fa-star" data-id="7"></i>
+                <div class="personaje-card" data-personaje="evil_morty">
+                    <img src="psnjs/evil_morty.png.jpg" alt="Evil Morty">
+                    <h3>Evil Morty</h3>
+                    <p>Una versión malvada de Morty.</p>
+                    <i class="fav-icon fa-star" data-id="9"></i>
                 </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="birdperson">
                     <img src="psnjs/birdperson.png.jpg" alt="Birdperson">
                     <h3>Birdperson</h3>
                     <p>Amigo de Rick.</p>
-                    <i class="fav-icon fa-star" data-id="8"></i>
-                </div>
-                <div class="personaje-card">
-                    <img src="psnjs/squanchy.png.jpg" alt="Squanchy">
-                    <h3>Squanchy</h3>
-                    <p>Amigo antropomórfico.</p>
-                    <i class="fav-icon fa-star" data-id="9"></i>
-                </div>
-                <div class="personaje-card">
-                    <img src="psnjs/evil_morty.png.jpg" alt="Evil Morty">
-                    <h3>Evil Morty</h3>
-                    <p>Variante malvada de Morty.</p>
                     <i class="fav-icon fa-star" data-id="10"></i>
                 </div>
-                <div class="personaje-card">
-                    <img src="psnjs/goldenfold.png.jpg" alt="Mr. Goldenfold">
-                    <h3>Mr. Goldenfold</h3>
-                    <p>Maestro de Morty.</p>
+                <div class="personaje-card" data-personaje="squanchy">
+                    <img src="psnjs/squanchy.png.jpg" alt="Squanchy">
+                    <h3>Squanchy</h3>
+                    <p>Amigo gato de Rick.</p>
                     <i class="fav-icon fa-star" data-id="11"></i>
                 </div>
-                <div class="personaje-card">
-                    <img src="psnjs/krombopulos.png.jpg" alt="Krombopulos Michael">
-                    <h3>Krombopulos Michael</h3>
-                    <p>Asesino.</p>
-                    <i class="fav-icon fa-star" data-id="12"></i>
-                </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="abradolf_lincler">
                     <img src="psnjs/abradolf.png.jpg" alt="Abradolf Lincler">
                     <h3>Abradolf Lincler</h3>
-                    <p>Experimento genético.</p>
+                    <p>Experimento genético fallido.</p>
+                    <i class="fav-icon fa-star" data-id="12"></i>
+                </div>
+                 <div class="personaje-card" data-personaje="goldenfold">
+                    <img src="psnjs/goldenfold.png.jpg" alt="Mr. Goldenfold">
+                    <h3>Mr. Goldenfold</h3>
+                    <p>Profesor de matemáticas.</p>
                     <i class="fav-icon fa-star" data-id="13"></i>
                 </div>
-                <div class="personaje-card">
-                    <img src="psnjs/unity.png.jpg" alt="Unity">
-                    <h3>Unity</h3>
-                    <p>Conciencia colectiva.</p>
+                <div class="personaje-card" data-personaje="krombopulos_michael">
+                    <img src="psnjs/krombopulos.png.jpg" alt="Krombopulos Michael">
+                    <h3>Krombopulos Michael</h3>
+                    <p>Asesino con un trabajo que ama.</p>
                     <i class="fav-icon fa-star" data-id="14"></i>
                 </div>
-                <div class="personaje-card">
-                    <img src="psnjs/gearhead.png.jpg" alt="Gearhead">
-                    <h3>Gearhead</h3>
-                    <p>Amigo de Rick.</p>
-                    <i class="fav-icon fa-star" data-id="15"></i>
-                </div>
-                <div class="personaje-card">
-                    <img src="psnjs/sir_robot.png.jpg" alt="Snuffles">
-                    <h3>Sir Robot</h3>
-                    <p>Sir Robot.</p>
-                    <i class="fav-icon fa-star" data-id="16"></i>
-                </div>
-                <div class="personaje-card">
-                    <img src="psnjs/the_president.png.jpg" alt="The President">
-                    <h3>The President</h3>
-                    <p>Presidente de los EE.UU.</p>
-                    <i class="fav-icon fa-star" data-id="17"></i>
-                </div>
-                <div class="personaje-card">
+                <div class="personaje-card" data-personaje="scary_terry">
                     <img src="psnjs/scary_terry.png.jpg" alt="Scary Terry">
                     <h3>Scary Terry</h3>
-                    <p>Parodia de Freddy Krueger.</p>
+                    <p>Versión de Freddy Krueger.</p>
+                    <i class="fav-icon fa-star" data-id="15"></i>
+                </div>
+                <div class="personaje-card" data-personaje="unity">
+                    <img src="psnjs/unity.png.jpg" alt="Unity">
+                    <h3>Unity</h3>
+                    <p>Mente colmena ex de Rick.</p>
+                    <i class="fav-icon fa-star" data-id="16"></i>
+                </div>
+                <div class="personaje-card" data-personaje="diane">
+                    <img src="psnjs/diane.png.jpg" alt="diane">
+                    <h3>Giant Head</h3>
+                    <p>Cabeza gigante.</p>
+                    <i class="fav-icon fa-star" data-id="17"></i>
+                </div>
+                <div class="personaje-card" data-personaje="the_president">
+                    <img src="psnjs/the_president.png.jpg" alt="the_president">
+                    <h3>Zepisian Amiral</h3>
+                    <p>Amiral.</p>
                     <i class="fav-icon fa-star" data-id="18"></i>
                 </div>
-                <div class="personaje-card">
-                    <img src="psnjs/noob_noob.png.jpg" alt="Noob-Noob">
-                    <h3>Noob-Noob</h3>
-                    <p>Conserje.</p>
+                <div class="personaje-card" data-personaje="sir_robot">
+                    <img src="psnjs/sir_robot.png.jpg" alt="sir_robot">
+                    <h3>Fart</h3>
+                    <p>Nube de gas telepática.</p>
                     <i class="fav-icon fa-star" data-id="19"></i>
                 </div>
-                <div class="personaje-card">
-                    <img src="psnjs/diane.png.jpg" alt="Diane Sanchez">
-                    <h3>Diane Sanchez</h3>
-                    <p>Esposa de Rick.</p>
+                 <div class="personaje-card" data-personaje="gearhead">
+                    <img src="psnjs/gearhead.png.jpg" alt="Gearhead">
+                    <h3>Glootie</h3>
+                    <p>Asistente de aplicación.</p>
                     <i class="fav-icon fa-star" data-id="20"></i>
                 </div>
+            </div>
+            <div id="mensaje-sin-sesion" style="text-align: center; color: var(--color-texto-secundario); font-style: italic; display: none;">
+                ¡Inicia sesión para guardar tus personajes favoritos!
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Rick & Morty Universe</p>
+        <p>&copy; 2025 Rick & Morty Universe (Simulado para Entrega Académica)</p>
     </footer>
+
+    <script>
+        //  Javascript de main.html
+        const personajesGrid = document.querySelector('.personajes-grid');
+        const nombreUsuarioSpan = document.querySelector('#nombre-usuario');
+        const mensajeSinSesion = document.querySelector('#mensaje-sin-sesion');
+
+        const rolUsuario = localStorage.getItem('usuarioRol');
+
+        if (rolUsuario) {
+            nombreUsuarioSpan.textContent = rolUsuario.toUpperCase(); // Mostrar el rol (ejemplo)
+
+            //  Ordenar los personajes según el rol (ejemplo)
+            if (rolUsuario === 'cientifico') {
+                //  Mostrar a Rick primero
+                const rickCard = document.querySelector('[data-personaje="rick"]');
+                personajesGrid.prepend(rickCard);
+            } else if (rolUsuario === 'estudiante') {
+                //  Mostrar a Morty primero
+                const mortyCard = document.querySelector('[data-personaje="morty"]');
+                personajesGrid.prepend(mortyCard);
+            } else if (rolUsuario === 'aventurero') {
+                //  Mostrar a Summer primero
+                const summerCard = document.querySelector('[data-personaje="summer"]');
+                personajesGrid.prepend(summerCard);
+            }
+            //  Puedes agregar más lógica para filtrar, mostrar u ocultar elementos según el rol
+        } else {
+            //  Si no hay rol (usuario no ha iniciado sesión), mostrar el mensaje
+            mensajeSinSesion.style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>

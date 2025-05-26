@@ -1,4 +1,4 @@
-//  Carrusel
+//  Carrusel (sin cambios)
 const carrusel = document.querySelector('.carrusel');
 const carruselItems = document.querySelectorAll('.carrusel-item');
 const carruselPrev = document.querySelector('.carrusel-prev');
@@ -7,7 +7,7 @@ const carruselNext = document.querySelector('.carrusel-next');
 let currentIndex = 0;
 
 function actualizarCarrusel() {
-    carrusel.style.transform = `translateX(${-currentIndex * 310}px)`;  //  300px ancho + 10px gap
+    carrusel.style.transform = `translateX(${-currentIndex * 310}px)`;
 }
 
 function siguienteItem() {
@@ -23,47 +23,58 @@ function anteriorItem() {
 carruselNext.addEventListener('click', siguienteItem);
 carruselPrev.addEventListener('click', anteriorItem);
 
-//  Seleccionar elementos del DOM (Tienda)
-
+//  Tienda (sin cambios)
 const productosGrid = document.querySelector('.productos-grid');
 const favoritosTiendaLista = document.querySelector('.favoritos-tienda-lista');
 const favoritosTiendaSeccion = document.querySelector('.favoritos-tienda');
 const sinFavoritosTienda = document.querySelector('.sin-favoritos-tienda');
 const botonesAgregarCarrito = document.querySelectorAll('.add-to-cart-button');
 
-//  Inicializar el array de favoritos desde localStorage (si existe)
 let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-actualizarFavoritosTiendaLista();  //  Llamar a la función para mostrar los favoritos iniciales
+actualizarFavoritosTiendaLista();
 
 /* =========================================
-    JAVASCRIPT LOGIN.HTML y REGISTRO.HTML (VALIDACIONES)
+    JAVASCRIPT LOGIN.HTML y REGISTRO.HTML (VALIDACIONES Y ROLES)
     ========================================= */
 
-// Elemento para mostrar mensajes de error/éxito (único para login y registro)
+// Usuarios predefinidos (SIMULACIÓN - ¡REEMPLAZAR CON TU LÓGICA DE BACKEND!)
+const usuariosPredefinidos = [
+    { username: 'rick', email: 'rick@universe.com', password: 'password123', rol: 'cientifico' },
+    { username: 'morty', email: 'morty@universe.com', password: 'password123', rol: 'estudiante' },
+    { username: 'summer', email: 'summer@universe.com', password: 'password123', rol: 'aventurero' }
+];
+
+// Elemento para mostrar mensajes de error/éxito
 const mensajeError = document.createElement('p');
 mensajeError.classList.add('error-message');
 
-// Función para mostrar mensajes
 function mostrarMensaje(form, mensaje, esError = false) {
     mensajeError.textContent = mensaje;
     mensajeError.style.color = esError ? 'red' : 'green';
-    // Asegúrate de que el formulario esté en el DOM antes de intentar insertar el mensaje
     if (form) {
         const existingMessage = form.previousElementSibling;
         if (existingMessage && existingMessage.classList.contains('error-message')) {
-            existingMessage.remove(); // Remove the old message if it exists
+            existingMessage.remove();
         }
         form.parentNode.insertBefore(mensajeError, form);
     }
 }
 
-// Función para validar el formato del email
 function esEmailValido(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
 
-// Función para validar el formulario (genérica para login y registro)
+// Función modificada para verificar credenciales y obtener el rol
+function verificarCredenciales(email, password) {
+    for (const usuario of usuariosPredefinidos) {
+        if (usuario.email === email && usuario.password === password) {
+            return usuario.rol; // Retorna el rol si las credenciales coinciden
+        }
+    }
+    return null; // Retorna null si no coinciden
+}
+
 function validarFormulario(formType, username, email, password, confirmPassword) {
     let valido = true;
 
@@ -77,12 +88,6 @@ function validarFormulario(formType, username, email, password, confirmPassword)
         valido = false;
     } else if (email !== undefined && !esEmailValido(email)) {
         mostrarMensaje(document.querySelector(`.${formType}-form`), 'Por favor, ingresa un email válido.', true);
-        valido = false;
-    } else if (formType === 'registro' && !simularEmailNoRegistrado(email)) {
-        mostrarMensaje(document.querySelector(`.${formType}-form`), 'Este email ya está registrado. Inicia sesión.', true);
-        valido = false;
-    } else if (formType === 'login' && !simularCorreoRegistrado(email)) {
-        mostrarMensaje(document.querySelector(`.${formType}-form`), 'Este correo no está registrado. Regístrate primero.', true);
         valido = false;
     }
 
@@ -102,35 +107,27 @@ function validarFormulario(formType, username, email, password, confirmPassword)
     return valido;
 }
 
-// Función para simular la verificación de correo registrado (¡REEMPLAZAR CON TU LÓGICA DE BACKEND!)
-function simularCorreoRegistrado(email) {
-    const correosRegistrados = ['rick@universe.com', 'morty@universe.com', 'beth@universe.com']; // Simulación
-    return correosRegistrados.includes(email);
-}
-
-// Función para simular la verificación de email no registrado (¡REEMPLAZAR CON TU LÓGICA DE BACKEND!)
-function simularEmailNoRegistrado(email) {
-    const correosRegistrados = ['rick@universe.com', 'morty@universe.com']; // Simulación
-    return !correosRegistrados.includes(email); // Invertido para registro
-}
-
 // Manejar el envío del formulario de login
 const loginForm = document.querySelector('.login-form');
 if (loginForm) {
     const userEmailInput = document.querySelector('#user-email');
     const passwordInput = document.querySelector('#login-password');
 
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-        if (validarFormulario('login', undefined, userEmailInput.value, passwordInput.value, undefined)) {
-            // Aquí iría la lógica real de inicio de sesión
-            alert('¡Inicio de sesión exitoso! (Simulado)');
-            // Puedes redirigir a otra página: window.location.href = 'main.html';
+    if (validarFormulario('login', undefined, userEmailInput.value, passwordInput.value, undefined)) {
+        const rolUsuario = verificarCredenciales(userEmailInput.value, passwordInput.value);
+        if (rolUsuario) {
+            localStorage.setItem('usuarioRol', rolUsuario);
+            console.log('Rol guardado:', rolUsuario);
+            window.location.href = 'main.html';
+        } else {
+            mostrarMensaje(loginForm, 'Credenciales incorrectas.', true);
         }
-    });
+    }
+});
 
-    // Opcional: Recordar usuario (solo email, ¡NUNCA contraseñas!)
     const recordarUsuario = () => {
         const emailGuardado = localStorage.getItem('usuarioEmail');
         if (emailGuardado) {
@@ -157,38 +154,35 @@ if (registroForm) {
         event.preventDefault();
 
         if (validarFormulario('registro', usernameInput.value, emailInput.value, passwordInput.value, confirmPasswordInput.value)) {
-            // Aquí iría la lógica real de registro
-            alert('¡Registro exitoso!');
-            // Puedes redirigir a otra página: window.location.href = 'login.html';
+            // Aquí iría la lógica real de registro (enviar al servidor, etc.)
+            alert('¡Registro exitoso! (Simulado)');
+            window.location.href = 'login.html'; // Redirigir a login.html
         }
     });
 }
 
-//  Manejar el clic en los iconos de favorito
+//  Tienda
 function manejarClickFavorito(event) {
     if (event.target.classList.contains('favorito-icon')) {
         const nombreProducto = event.target.dataset.productoNombre;
-        event.target.classList.toggle('active');  // Alternar la clase 'active'
+        event.target.classList.toggle('active');
 
         if (favoritos.includes(nombreProducto)) {
-            favoritos = favoritos.filter(producto => producto !== nombreProducto); // Eliminar de favoritos
+            favoritos = favoritos.filter(producto => producto !== nombreProducto);
         } else {
-            favoritos.push(nombreProducto); // Añadir a favoritos
+            favoritos.push(nombreProducto);
         }
-        actualizarFavoritosTiendaLista(); // Actualizar la visualización
+        actualizarFavoritosTiendaLista();
     }
 }
 
-//  Manejar el clic en los botones "Añadir al Carrito"
 botonesAgregarCarrito.forEach(boton => {
     boton.addEventListener('click', () => {
         const nombreProducto = boton.parentElement.querySelector('h3').textContent;
         alert(`¡${nombreProducto} añadido al carrito de compras!`);
-        //  Aquí iría la lógica real para añadir el producto al carrito
     });
 });
 
-//  Event listeners (Tienda)
 if (productosGrid) {
     productosGrid.addEventListener('click', manejarClickFavorito);
 }
@@ -199,7 +193,6 @@ if (favoritosTiendaLista) {
             const nombreProducto = event.target.dataset.productoNombre;
             favoritos = favoritos.filter(producto => producto !== nombreProducto);
             actualizarFavoritosTiendaLista();
-            //  Opcional: Desactivar la estrella correspondiente en la lista de productos
             const estrella = document.querySelector(`.favorito-icon[data-producto-nombre="${nombreProducto}"]`);
             if (estrella) {
                 estrella.classList.remove('active');
@@ -208,9 +201,8 @@ if (favoritosTiendaLista) {
     });
 }
 
-//  Inicializar la visualización de favoritos al cargar la página (Tienda)
 function actualizarFavoritosTiendaLista() {
-    favoritosTiendaLista.innerHTML = '';  // Limpiar la lista antes de actualizar
+    favoritosTiendaLista.innerHTML = '';
     if (favoritos.length === 0) {
         sinFavoritosTienda.style.display = 'block';
     } else {
@@ -219,11 +211,11 @@ function actualizarFavoritosTiendaLista() {
             const li = document.createElement('li');
             li.classList.add('favorito-tienda-item');
             li.innerHTML = `
-                <span>${producto}</span>
-                <button class="remover-favorito" data-producto-nombre="${producto}">X</button>
+                <span><span class="math-inline">\{producto\}</span\>
+<button class\="remover\-favorito" data\-producto\-nombre\="</span>{producto}">X</button>
             `;
             favoritosTiendaLista.appendChild(li);
         });
     }
-    localStorage.setItem('favoritos', JSON.stringify(favoritos));  // Guardar en localStorage
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
 }
